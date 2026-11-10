@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a27" />
+  <title>¡Lucio, volvé a 5°A!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Lucio, volvé a 5°A"><span class="brand-mark">5°</span><span>RECREO <b>INTERRUMPIDO</b></span></a>
+      <div class="top-note"><span class="dot"></span> MISIÓN ESCOLAR <span class="top-divider">·</span> <span id="stage-label">SALIDA DE 5°B</span></div>
+      <button class="sound-toggle" id="sound-toggle" aria-label="Activar o silenciar sonido">♫ <span>SONIDO</span></button>
+    </header>
+    <section class="game-layout" aria-label="Videojuego">
+      <div class="game-column">
+        <div class="hud">
+          <div class="hud-item mission"><span class="hud-icon">↗</span><div><small>DESTINO</small><strong id="destination">Aula 5°A</strong></div></div>
+          <div class="hud-item lives"><small>VIDAS</small><div class="hearts" id="hearts">♥ ♥ ♥</div></div>
+          <div class="hud-item timer"><span class="hud-icon">◷</span><div><small>TIEMPO</small><strong id="timer">00:00</strong></div></div>
+          <div class="hud-item sprint"><div class="sprint-label"><small>PIQUE</small><strong id="sprint-text">LISTO</strong></div><div class="meter"><i id="sprint-meter"></i></div></div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="game" width="960" height="600" aria-label="Lucio recorre los pasillos de la escuela"></canvas>
+          <div class="overlay" id="overlay">
+            <div class="intro-card">
+              <div class="eyebrow"><span>JUEGO DE PASILLO</span><span>01 — 04</span></div>
+              <div class="intro-art"><div class="sunburst"></div><div class="art-door"><b>5°B</b><i></i></div><div class="art-kid">●<span>◡</span></div><div class="art-scribble">¡UPS!</div><div class="art-arrow">➜</div></div>
+              <h1>¡Lucio, volvé<br><em>a 5°A!</em></h1>
+              <p>La profe lo echó de 5°B. Atravesá la escuela, esquivá a todo el mundo y llegá a tu verdadero curso.</p>
+              <div class="intro-bottom"><button class="primary-btn" id="start-btn">¡A CORRER! <span>→</span></button><div class="key-hint"><kbd>WASD</kbd> o <kbd>↑↓←→</kbd><small>PARA MOVERTE</small></div></div>
+              <div class="tiny-note">3 VIDAS <b>·</b> 4 ZONAS <b>·</b> CERO TARDANZAS</div>
+            </div>
+          </div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+          <div class="touch-controls" aria-label="Controles táctiles">
+            <div class="dpad"><button data-dir="up" aria-label="Arriba">▲</button><button data-dir="left" aria-label="Izquierda">◀</button><button data-dir="down" aria-label="Abajo">▼</button><button data-dir="right" aria-label="Derecha">▶</button></div>
+            <button class="dash-btn" id="dash-btn"><span>⚡</span><small>PIQUE</small></button>
+          </div>
+        </div>
+        <div class="game-footer"><span><i class="mini-dot"></i> <b>5°A TE ESPERA</b></span><span>CONSEJO: NO TE QUEDES QUIETO <span class="footer-arrow">↗</span></span></div>
+      </div>
+      <aside class="side-panel">
+        <div class="panel-kicker">EL PLAN DE LUCIO <span>✳</span></div>
+        <h2>Una misión.<br><em>Cuatro pasillos.</em></h2>
+        <div class="route-list" id="route-list">
+          <div class="route-step active"><span class="route-num">01</span><div><b>Salida de 5°B</b><small>¡La profe viene atrás!</small></div><span class="route-status">●</span></div>
+          <div class="route-step"><span class="route-num">02</span><div><b>Pasillo principal</b><small>Tráfico de recreo</small></div><span class="route-status">○</span></div>
+          <div class="route-step"><span class="route-num">03</span><div><b>Zona de escaleras</b><small>La hora pico</small></div><span class="route-status">○</span></div>
+          <div class="route-step"><span class="route-num">04</span><div><b>Último pasillo</b><small>Ya casi, Lucio</small></div><span class="route-status">○</span></div>
+        </div>
+        <div class="tip-card"><span class="tip-icon">⚡</span><div><b>PIQUE DE ESTUDIANTE</b><p>Un sprint corto te saca de cualquier apuro. Usalo con cabeza: necesita recargar.</p></div></div>
+        <div class="panel-quote"><span>“</span>Lanfranchini, ¿a dónde vas?<br><b>— La profe de 5°B</b></div>
+        <div class="controls-note"><span>⌨</span> TECLADO <b>WASD / FLECHAS</b><br><span>▣</span> CELULAR <b>PAD + BOTÓN PIQUE</b></div>
+      </aside>
+    </section>
+    <footer class="site-footer"><span>HECHO PARA SOBREVIVIR AL RECREO</span><span>ESCUELA SECUNDARIA · 2025</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
